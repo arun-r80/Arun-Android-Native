@@ -29,13 +29,12 @@
         android:text="@string/fragment_button"
         />
     <FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/frame_fragment"
         android:layout_below="@id/fragment_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/frame_fragment"
-        >
-        </FrameLayout>
+        />
+
 </RelativeLayout>
 
    <!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

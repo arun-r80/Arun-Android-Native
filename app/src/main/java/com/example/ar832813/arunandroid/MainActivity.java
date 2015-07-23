@@ -3,6 +3,7 @@ package com.example.ar832813.arunandroid;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.media.audiofx.BassBoost;
 import android.support.v4.app.FragmentActivity;
@@ -47,13 +48,14 @@ public class MainActivity extends ActionBarActivity {
             }
         });
         // REcreate instance state for EditText view
-        if (savedInstanceState != null){
-                        //Get char sequence from the bundle;
-            CharSequence CharSequenceEditText  = savedInstanceState.getCharSequence("EDIT_TEXT_VALUE");
+        if (savedInstanceState != null) {
+            //Get char sequence from the bundle;
+            CharSequence CharSequenceEditText = savedInstanceState.getCharSequence("EDIT_TEXT_VALUE");
 
             // Assign the char sequence to the Activity's EditText
-            EditText saveInstanceEditText = (EditText)findViewById(R.id.edit_message);
+            EditText saveInstanceEditText = (EditText) findViewById(R.id.edit_message);
             saveInstanceEditText.setText(CharSequenceEditText);
+        }
 //        Add dynamic fragment on clicking the button
         Button buttonfragment = (Button)findViewById(R.id.fragment_button);
         buttonfragment.setOnClickListener(new OnClickListener(){
@@ -61,27 +63,38 @@ public class MainActivity extends ActionBarActivity {
 
             @Override
             public void onClick(View view){
+                Log.v("Fragment", "Fragment Created");
                 if (findViewById(R.id.frame_fragment) != null){
                     //check if the view is not already
                     if(savedInstanceState != null){
                         return;
                     }
 
-                    // Create new fragement
-                    int i = R.id.frame_fragment;
-                    /*
+                    // Create new fragment
+
+                    ARListFragment firstFragment = new ARListFragment();
+
                     //Add details from Intent to the Fragment
                     firstFragment.setArguments(getIntent().getExtras());
+                    if( R.id.frame_fragment == 0){
+                        Log.v("Fragment","Invalid fragment id");
+                        return;
+                    }
+                    /*android.app.FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    */
 
-                    int commit = getSupportFragmentManager().beginTransaction().add(i, firstFragment).commit();
-*/
-
+                    int commit = getFragmentManager().beginTransaction().add(R.id.frame_fragment, firstFragment).commit();
+                    Log.v("Fragment","Committed Fragment");
                 }
+                Log.v("Fragment","I went throuhg");
+                return;
+
             }
         });
 
         }
-    }
+
 //  Save Activity instance
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
