@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_width="275dp"
+        android:hint="@string/edit_message"
+        android:layout_height="wrap_content"
+         />
+    <Button
+        android:id="@+id/send_button"
+        android:layout_toRightOf="@id/edit_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/edit_message"
+        android:layout_alignBottom="@id/edit_message"
+        android:text="@string/button_send"
+        android:background="@drawable/buttonstatelist"
+        />
+    <Button
+        android:id="@+id/fragment_button"
+        android:layout_below="@id/edit_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:text="@string/fragment_button"
+        />
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_below="@id/fragment_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_fragment"
+        >
+        </FrameLayout>
+</RelativeLayout>
+
+   <!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/fragment_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_button"
+        android:background="@drawable/buttonstatelist"
+        />
+    </LinearLayout>-->
+
+
+    <!--android:layout_height="wrap_content" android:onClick="sendMessage" android:hint="@string/edit_message"-->
+

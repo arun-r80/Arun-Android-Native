@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Arun Android</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_message">Please Give Me Your Name!!</string>
+    <string name="button_send">Send</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="fragment_button">Please show the fragment now</string>
+    <string name="action_search">Search</string>
+        <string name="title_activity_display_message">My Message</string>
+    <drawable name="actionbar_background">#FFB6C1</drawable>
+
+</resources>
