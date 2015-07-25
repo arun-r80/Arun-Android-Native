@@ -1,6 +1,6 @@
 package com.example.ar832813.arunandroid;
 
-import android.app.ActionBar;
+import android.support.v7.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -84,7 +84,7 @@ public class MainActivity extends ActionBarActivity {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     */
 
-                    int commit = getFragmentManager().beginTransaction().add(R.id.frame_fragment, firstFragment).commit();
+                    int commit = getSupportFragmentManager().beginTransaction().add(R.id.frame_fragment, firstFragment).commit();
                     Log.v("Fragment","Committed Fragment");
                 }
                 Log.v("Fragment","I went throuhg");
@@ -128,7 +128,7 @@ public class MainActivity extends ActionBarActivity {
 
 //    Handle screen touch event
      @Override
-     public boolean onTouchEvent(MotionEvent ev){
+  public boolean onTouchEvent(MotionEvent ev){
        // ActionBar actionBarStatus = getSupportActionBar();
         // actionBarActivityCurrent = getSupportActionBar();
          int Action_Received = ev.getActionMasked();
