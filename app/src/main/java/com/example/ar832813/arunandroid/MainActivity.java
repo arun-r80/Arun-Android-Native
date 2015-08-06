@@ -1,5 +1,7 @@
 package com.example.ar832813.arunandroid;
 
+import android.support.v4.view.MenuCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
@@ -17,14 +19,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+import android.support.v7.widget.ShareActionProvider;
 import android.view.View.OnClickListener;
+
 
 public class MainActivity extends ActionBarActivity {
     public final static String EXTRA_MESSAGE = "com.example.ar832813.arunandroid.MESSAGE";
 
-
-    @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -63,10 +64,11 @@ public class MainActivity extends ActionBarActivity {
 
             @Override
             public void onClick(View view){
-                Log.v("Fragment", "Fragment Created");
+              //  Log.v("Fragment", "Fragment Created");
                 if (findViewById(R.id.frame_fragment) != null){
                     //check if the view is not already
                     if(savedInstanceState != null){
+
                         return;
                     }
 
@@ -77,7 +79,7 @@ public class MainActivity extends ActionBarActivity {
                     //Add details from Intent to the Fragment
                     firstFragment.setArguments(getIntent().getExtras());
                     if( R.id.frame_fragment == 0){
-                        Log.v("Fragment","Invalid fragment id");
+                        //Log.v("Fragment","Invalid fragment id");
                         return;
                     }
                     /*android.app.FragmentManager fragmentManager = getFragmentManager();
@@ -85,9 +87,9 @@ public class MainActivity extends ActionBarActivity {
                     */
 
                     int commit = getSupportFragmentManager().beginTransaction().add(R.id.frame_fragment, firstFragment).commit();
-                    Log.v("Fragment","Committed Fragment");
+                   // Log.v("Fragment","Committed Fragment");
                 }
-                Log.v("Fragment","I went throuhg");
+              //  Log.v("Fragment","I went throuhg");
                 return;
 
             }
@@ -96,6 +98,36 @@ public class MainActivity extends ActionBarActivity {
         }
 
 //  Save Activity instance
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        // Inflate menu resource file
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+
+        //Create intent for Share menu;
+        Intent intentShare = new Intent();
+        intentShare.setAction(Intent.ACTION_SEND);
+        intentShare.putExtra(Intent.EXTRA_TEXT,"Intent to Share");
+        intentShare.setType("text/plain");
+
+        //Get menuitem for the selected menu item
+        MenuItem itemShare = menu.findItem(R.id.share_main_activity);
+
+        ShareActionProvider shareActionProviderIntent = new ShareActionProvider(this);
+        if ( MenuItemCompat.getActionProvider(itemShare) == null) {
+          //  Log.v("Activity","Share Action Provider not returned");
+        }
+        shareActionProviderIntent = (ShareActionProvider) MenuItemCompat.getActionProvider(itemShare);
+        if (shareActionProviderIntent == null ){
+          //  Log.v("Activity","Null share Action Provider");
+            return true;
+        }
+
+        shareActionProviderIntent.setShareIntent(intentShare);
+       // Log.v("Activity","Share Intent set");
+        return true;
+    }
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
 

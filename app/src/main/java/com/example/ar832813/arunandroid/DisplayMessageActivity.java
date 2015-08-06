@@ -19,7 +19,7 @@ public class DisplayMessageActivity extends ActionBarActivity {
 
         //Get the intent which created the activity;
         Intent intentparent = getIntent();
-        String MessageInIntent = intentparent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String MessageInIntent = intentparent.getStringExtra(ARListFragment.LIST_MESSAGE);
 
         //Create a new TextView to show the message;
        /* TextView textbox = new TextView(this);
@@ -39,6 +39,8 @@ public class DisplayMessageActivity extends ActionBarActivity {
 
 
     }
+
+
 
 
 

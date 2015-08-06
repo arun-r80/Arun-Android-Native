@@ -19,18 +19,34 @@
         android:text="@string/button_send"
         android:background="@drawable/buttonstatelist"
         />
-    <Button
-        android:id="@+id/fragment_button"
-        android:layout_below="@id/edit_message"
+
+    <RelativeLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_below="@+id/edit_message">
+
+    <Button
+        android:id="@+id/fragment_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:text="@string/fragment_button"
         />
-    <FrameLayout
+    <ImageButton
+        android:id="@+id/camera_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fragment_button"
+        android:layout_alignTop="@id/fragment_button"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@id/fragment_button"
+        android:src="@drawable/camera_icon"/>
+    </RelativeLayout>
+      <FrameLayout
         android:id="@+id/frame_fragment"
-        android:layout_below="@id/fragment_button"
+        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
@@ -48,6 +64,9 @@
         android:layout_height="wrap_content"
         android:text="@string/fragment_button"
         android:background="@drawable/buttonstatelist"
+
+
+
         />
     </LinearLayout>-->
 
