@@ -31,4 +31,5 @@
     Widget.AppCompat.Light.ActionBar.Solid.Inverse
     </style>
 -->
+    <color  name="border_sendmessage">#FFFFFF</color>
 </resources>

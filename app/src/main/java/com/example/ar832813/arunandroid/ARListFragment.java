@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
 import android.content.pm.PackageManager;
 import android.widget.SimpleAdapter;
 
@@ -26,24 +27,31 @@ public class ARListFragment extends ListFragment {
     //inflate the fragment during onAttach()
     public static final String LIST_MESSAGE = "com.example.ar832813.arunandroid.ARListFragment.MESSAGE";
 
+
     @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle savedInstanceState){
         //Create binding date for the list
         //Create Flag image list
-        int flaglist[]={R.drawable.flag_india,
-        R.drawable.flag_us};
+
+        // get bundle associate with this Fragment
+        Bundle args = this.getArguments();
+
+        int flaglist[]={R.drawable.flag_india, R.drawable.flag_us};
+        ArrayList flagArrayList = args.getIntegerArrayList("flaglist");
 
         //Create name of countries
         String countryname[] = {
                 "India",
                 "US"
         };
+        ArrayList countryNameArrayList = args.getStringArrayList("countryname");
 
-        //Create Currency for countries
+                //Create Currency for countries
         String currencyList[]={
                 "Rupee",
                 "US Dollar"
         };
+        ArrayList currencyListArrayList = args.getStringArrayList("currencylist");
 
         //Create ArrayList for the text view
         ArrayList<HashMap<String,String>> arrayList = new ArrayList<HashMap<String, String>>();
@@ -51,9 +59,9 @@ public class ARListFragment extends ListFragment {
         // Update HashMap for the countries
         for(int i=0;i<2;i++){
             HashMap<String, String> iterationCounterHashMap = new HashMap<String,String>();
-            iterationCounterHashMap.put("Country",countryname[i]);
-            iterationCounterHashMap.put("Currency",currencyList[i]);
-            iterationCounterHashMap.put("Flag",Integer.toString(flaglist[i]));
+            iterationCounterHashMap.put("Country",countryNameArrayList.get(i).toString());
+            iterationCounterHashMap.put("Currency",currencyListArrayList.get(i).toString());
+            iterationCounterHashMap.put("Flag",flagArrayList.get(i).toString());
             arrayList.add(iterationCounterHashMap);
         }
 

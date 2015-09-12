@@ -8,7 +8,8 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="fragment_button">Please show the fragment now</string>
     <string name="action_search">Search</string>
-        <string name="title_activity_display_message">My Message</string>
-    <drawable name="actionbar_background">#FFB6C1</drawable>
+    <string name="title_activity_display_message">My Message</string>
+    <drawable name="actionbar_background">#252EE7</drawable>
+    <drawable name="mainactivity_background">#99C9F5</drawable>
 
 </resources>
