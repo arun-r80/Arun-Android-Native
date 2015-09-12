@@ -41,7 +41,7 @@
     </RelativeLayout>
 
        <android.support.v4.view.ViewPager
-           android:paddingTop="150dp"
+           android:paddingTop="156dp"
            android:id="@+id/countrypager"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
