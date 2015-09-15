@@ -1,19 +1,15 @@
 package com.example.ar832813.arunandroid;
 
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.support.v4.app.ListFragment;
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
-import android.content.pm.PackageManager;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
@@ -36,22 +32,9 @@ public class ARListFragment extends ListFragment {
         // get bundle associate with this Fragment
         Bundle args = this.getArguments();
 
-        int flaglist[]={R.drawable.flag_india, R.drawable.flag_us};
-        ArrayList flagArrayList = args.getIntegerArrayList("flaglist");
-
-        //Create name of countries
-        String countryname[] = {
-                "India",
-                "US"
-        };
-        ArrayList countryNameArrayList = args.getStringArrayList("countryname");
-
-                //Create Currency for countries
-        String currencyList[]={
-                "Rupee",
-                "US Dollar"
-        };
-        ArrayList currencyListArrayList = args.getStringArrayList("currencylist");
+       ArrayList flagArrayList = args.getIntegerArrayList("flaglist");
+       ArrayList countryNameArrayList = args.getStringArrayList("countryname");
+       ArrayList currencyListArrayList = args.getStringArrayList("currencylist");
 
         //Create ArrayList for the text view
         ArrayList<HashMap<String,String>> arrayList = new ArrayList<HashMap<String, String>>();

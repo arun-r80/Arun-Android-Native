@@ -1,13 +1,11 @@
 package com.example.ar832813.arunandroid;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 
 public class DisplayMessageActivity extends ActionBarActivity {
@@ -26,21 +24,32 @@ public class DisplayMessageActivity extends ActionBarActivity {
         textbox.setTextSize(40);
         textbox.setText(MessageInIntent);
 */
-
         // Set the new text message in
         //Set Text View as Content Layout;
         setContentView(R.layout.activity_display_message);
 
+
         // Give the new text message in the activity layout
-        TextView textbox = (TextView) findViewById(R.id.newactivitytextview);
-        textbox.setText(MessageInIntent);
+//        TextView textbox = (TextView) findViewById(R.id.newactivitytextview);
+//        textbox.setText(MessageInIntent);
+
+        //Create the view for view pager
+
+        Fragment slidingTabFragment = new ARSlidingTabFragment();
+
+        FragmentTransaction arFragmentTransaction=  getSupportFragmentManager().beginTransaction();
+        arFragmentTransaction.replace(R.id.tab_layout_fragment,slidingTabFragment);
+        arFragmentTransaction.commit();
+//
+//        ViewPager arviewPager=(ViewPager) findViewById(R.id.countrypager);
+//        ARTabFragmentStateAdapter arTabFragmentStateAdapter = new ARTabFragmentStateAdapter(getSupportFragmentManager());
+//        arviewPager.setAdapter(arTabFragmentStateAdapter);
 
 
 
 
-    }
 
-
+        }
 
 
 
@@ -58,4 +67,8 @@ public class DisplayMessageActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
 }

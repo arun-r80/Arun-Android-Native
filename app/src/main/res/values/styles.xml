@@ -9,6 +9,7 @@
            parent="@style/Theme.AppCompat.Light.DarkActionBar" >
            <item    name="android:actionBarStyle" > @style/CustomActionBar</item>
 
+
            <item name="actionBarStyle"> @style/CustomActionBar</item>
         ></style>
 
