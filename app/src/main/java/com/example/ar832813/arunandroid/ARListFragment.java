@@ -22,7 +22,7 @@ import java.util.List;
 public class ARListFragment extends ListFragment {
     //inflate the fragment during onAttach()
     public static final String LIST_MESSAGE = "com.example.ar832813.arunandroid.ARListFragment.MESSAGE";
-
+//dummy comment
 
     @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle savedInstanceState){
